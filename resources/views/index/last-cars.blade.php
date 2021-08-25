@@ -1,0 +1,1 @@
+<livewire:last-cars-component />
