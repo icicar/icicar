@@ -31,3 +31,4 @@ Route::view('/aviso-legal', 'policies.legal-advidsory');
 Route::view('/quienes-somos', 'about-us.about-us');
 
 Route::get('get-marcas-vehiculos', [VehiculosController::class,'getMarcasVehiculos']);
+Route::get('get-modelos-vehiculos', [VehiculosController::class,'getModelosVehiculos']);

@@ -13,4 +13,12 @@ class VehiculosController extends Controller
         $data = '';
         ApiConnectionHelper::getDataApi(MyConstants::URI_MARCAS, $data);
     }
+
+    public function getModelosVehiculos()
+    {
+        $data = '';
+        ApiConnectionHelper::getDataApi(MyConstants::URI_MODELOS, $data);
+    }
+
+
 }
