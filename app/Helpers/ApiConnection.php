@@ -25,12 +25,12 @@
                 CURLOPT_CUSTOMREQUEST => 'GET',
                 CURLOPT_USERPWD => "$username:$password"
             ));
-
             $response = curl_exec($curl);
+
             $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
             curl_close($curl);
-dd($response);
+
             return [$httpCode, json_decode($response)];
         }
 
@@ -55,8 +55,8 @@ dd($response);
             ));
 
             $response = curl_exec($curl);
+            dd(json_decode($response));
             $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
             curl_close($curl);
 
             return [$httpCode, json_decode($response)];
