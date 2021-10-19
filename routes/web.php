@@ -34,3 +34,11 @@ Route::view('/quienes-somos', 'about-us.about-us');
 
 Route::get('get-marcas-vehiculos', [VehiculosController::class,'getMarcasVehiculos']);
 Route::get('get-modelos-vehiculos', [VehiculosController::class,'getModelosVehiculos']);
+Route::get('get-carburantes-vehiculos', [VehiculosController::class,'getCarburantesVehiculos']);
+Route::get('get-tipos-oferta', [VehiculosController::class,'getTiposOferta']);
+Route::get('get-tipos-persona', [VehiculosController::class,'getTiposPersona']);
+Route::get('get-tratamientos-persona', [VehiculosController::class,'getTratamientosPersona']);
+Route::get('get-paises', [VehiculosController::class,'getPaises']);
+Route::get('get-provincias', [VehiculosController::class,'getProvincias']);
+Route::get('get-municipios', [VehiculosController::class,'getMunicipios']);
+Route::get('get-vehiculos', [VehiculosController::class,'getVehiculos']);
