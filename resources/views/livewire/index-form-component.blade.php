@@ -1,4 +1,6 @@
 <section class="search white-bg">
+
+{{-- {{dd(($marcas['marcas'][0]['marca']))}} --}}
     <div class="container">
         <div class="search-block">
             <div class="row">
@@ -7,27 +9,18 @@
                         <div class="col-md-4">
                             <span>Marca</span>
                             <div class="selected-box">
-                                <select class="selectpicker">
-                                    <option>Make </option>
-                                    <option>BMW</option>
-                                    <option>Honda </option>
-                                    <option>Hyundai </option>
-                                    <option>Nissan </option>
-                                    <option>Mercedes Benz </option>
+                                <select class="selectpicker" id="marcas" name="marcas">
+                                    @foreach ($marcas['marcas'] as $marca )
+                                        <option value="{{$marca['idmarca']}}">{{$marca['marca']}} </option>
+                                    @endforeach
+
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <span>Modelo</span>
                             <div class="selected-box">
-                                <select class="selectpicker">
-                                    <option>Model</option>
-                                    <option>3-Series</option>
-                                    <option>Carrera</option>
-                                    <option>GT-R</option>
-                                    <option>Cayenne</option>
-                                    <option>Mazda6</option>
-                                    <option>Macan</option>
+                                <select class="selectpicker" id="modelos" name="modelos">
                                 </select>
                             </div>
                         </div>
@@ -68,3 +61,9 @@
         </div>
     </div>
 </section>
+
+
+@section('scripts')
+
+@stop
+

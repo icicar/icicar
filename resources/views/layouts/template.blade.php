@@ -230,7 +230,18 @@
              </div>
           </footer>
 
+
           <script type="text/javascript" src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
+
+          <script>
+            console.log('ffffffff');
+            $(document).ready(function() {
+                $("#marcas").change(function(){
+                        console.log('entra marcas');
+
+                })
+            });
+        </script>
 
             <!-- bootstrap -->
             <script type="text/javascript" src="{{ asset('assets/js/popper.js') }}"></script>
@@ -343,5 +354,9 @@
             })(jQuery);
 
             </script>
+
+            @yield('scripts')
+
+
     </body>
 </html>

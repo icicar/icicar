@@ -1,1 +1,2 @@
-<livewire:index-form-component />
+@livewire('index-form-component')
+
