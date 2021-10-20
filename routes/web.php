@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/', [VehiculosController::class, 'index']);
 
 
 
@@ -42,3 +44,5 @@ Route::get('get-paises', [VehiculosController::class,'getPaises']);
 Route::get('get-provincias', [VehiculosController::class,'getProvincias']);
 Route::get('get-municipios', [VehiculosController::class,'getMunicipios']);
 Route::get('get-vehiculos', [VehiculosController::class,'getVehiculos']);
+
+
