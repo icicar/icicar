@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class VehiculosController extends Controller
 {
+    public function index()
+    {
+        dd('llega home');
+        return view('index');
+    }
     public function getMarcasVehiculos()
     {
         $data = '';
