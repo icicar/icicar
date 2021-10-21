@@ -23,12 +23,12 @@ class IndexFormComponent extends Component
         ]);
     }
 
-    public function updatedselectedMarca($marca_id)
+    public function updatedselectedMarca($idmarca)
     {
         $arrayModelos = [];
         $getModelos = Http::get(MyConstants::URL_CONNECTION.MyConstants::URI_MODELOS)->json();
         foreach($getModelos['modelos'] as $modelo){
-            if($modelo['idmarca']== $marca_id){
+            if($modelo['idmarca']== $idmarca){
                 $arrayModelos = Arr::add($arrayModelos, 'idmodelo' , $modelo['idmodelo']);
                 $this->modelos = $arrayModelos;
             }

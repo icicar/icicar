@@ -61,6 +61,7 @@
         @livewireStyles
     </head>
     <body class="antialiased">
+
         {{-- <div id="load_screen">
             <div class="loader">
                 <div class="loader-content">

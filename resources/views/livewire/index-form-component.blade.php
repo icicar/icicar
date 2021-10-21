@@ -19,7 +19,6 @@
 
                             </div>
                         </div>
-                        {{-- {{dd($modelos)}} --}}
 
                         <div class="col-md-4">
                             <span>Modelo</span>
@@ -29,7 +28,6 @@
                                     @foreach($modelos as $modelo)
                                         <option value="{{$modelo['idmodelo']}}"> {{$modelo['idmodelo']}}</option>
                                     @endforeach
-                                {{-- <select class="selectpicker" id="modelos" name="modelos"> --}}
                                 </select>
                             </div>
                         </div>
