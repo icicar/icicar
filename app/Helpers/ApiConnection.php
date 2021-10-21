@@ -55,7 +55,7 @@
             ));
 
             $response = curl_exec($curl);
-            dd(json_decode($response));
+            // dd(json_decode($response));
             $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 

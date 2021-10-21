@@ -57,9 +57,11 @@
         @yield('styles')
 
         <!-- Necesario para el funcionamiento de Livewire -->
-        <livewire:styles />
+
+        @livewireStyles
     </head>
     <body class="antialiased">
+
         {{-- <div id="load_screen">
             <div class="loader">
                 <div class="loader-content">
@@ -230,7 +232,10 @@
              </div>
           </footer>
 
+
           <script type="text/javascript" src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
+
+
 
             <!-- bootstrap -->
             <script type="text/javascript" src="{{ asset('assets/js/popper.js') }}"></script>
@@ -343,5 +348,7 @@
             })(jQuery);
 
             </script>
+
+            @livewireScripts
     </body>
 </html>

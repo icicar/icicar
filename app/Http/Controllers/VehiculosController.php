@@ -10,18 +10,18 @@ class VehiculosController extends Controller
 {
     public function index()
     {
-        dd('llega home');
+
         return view('index');
     }
-    public function getMarcasVehiculos()
+    public static function getMarcasVehiculos()
     {
         $data = '';
         ApiConnectionHelper::getDataApi(MyConstants::URI_MARCAS, $data);
     }
 
-    public function getModelosVehiculos()
+    public function getModelosVehiculos($idmarca)
     {
-        $data = '';
+        $data['idmarca'] = $idmarca;
         ApiConnectionHelper::getDataApi(MyConstants::URI_MODELOS, $data);
     }
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\VehiculosController;
+use App\Http\Livewire\IndexFormComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,7 +36,7 @@ Route::view('/aviso-legal', 'policies.legal-advidsory');
 Route::view('/quienes-somos', 'about-us.about-us');
 
 Route::get('get-marcas-vehiculos', [VehiculosController::class,'getMarcasVehiculos']);
-Route::get('get-modelos-vehiculos', [VehiculosController::class,'getModelosVehiculos']);
+Route::get('get-modelos-vehiculos/{idmarca}', [VehiculosController::class,'getModelosVehiculos']);
 Route::get('get-carburantes-vehiculos', [VehiculosController::class,'getCarburantesVehiculos']);
 Route::get('get-tipos-oferta', [VehiculosController::class,'getTiposOferta']);
 Route::get('get-tipos-persona', [VehiculosController::class,'getTiposPersona']);
@@ -45,4 +46,5 @@ Route::get('get-provincias', [VehiculosController::class,'getProvincias']);
 Route::get('get-municipios', [VehiculosController::class,'getMunicipios']);
 Route::get('get-vehiculos', [VehiculosController::class,'getVehiculos']);
 
-
+// Route::get('change-event', ChangeEvent::class);
+// Route::get('/marcas', [IndexFormComponent::class]);
