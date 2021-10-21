@@ -9,21 +9,31 @@
                         <div class="col-md-4">
                             <span>Marca</span>
                             <div class="selected-box">
-                                <select class="selectpicker" id="marcas" name="marcas">
+                                {{-- <select class="selectpicker" wire:click="changeEvent($event.target.value)"> --}}
+                                <select wire:model="selectedMarca" class="selectpicker">
+                                    <option value="">Marca </option>
                                     @foreach ($marcas['marcas'] as $marca )
                                         <option value="{{$marca['idmarca']}}">{{$marca['marca']}} </option>
                                     @endforeach
-
                                 </select>
+
                             </div>
                         </div>
+                        {{-- {{dd($modelos)}} --}}
+
                         <div class="col-md-4">
                             <span>Modelo</span>
                             <div class="selected-box">
-                                <select class="selectpicker" id="modelos" name="modelos">
+                                <select wire:model="selectedModelo" class="selectpicker">
+                                    <option value="">Marca </option>
+                                    @foreach($modelos as $modelo)
+                                        <option value="{{$modelo['idmodelo']}}"> {{$modelo['idmodelo']}}</option>
+                                    @endforeach
+                                {{-- <select class="selectpicker" id="modelos" name="modelos"> --}}
                                 </select>
                             </div>
                         </div>
+
                         <div class="col-md-4">
                             <span>Kilómetros</span>
                             <div class="selected-box">

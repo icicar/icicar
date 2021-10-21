@@ -3,31 +3,39 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Http\Controllers\VehiculosController;
-use App\Helpers\ApiConnectionHelper;
 use App\constants\MyConstants;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 
 class IndexFormComponent extends Component
 {
     // public $marcas;
+    public $selectedMarca = null, $selectedModelo = null;
+    public $modelos = null;
 
-    // public function mount($marcas)
-    // {
-    //     $marcas = Http::get(MyConstants::HTTPS.MyConstants::API_USER.':'.MyConstants::API_PWD.'@'.MyConstants::API_URL.MyConstants::URI_MARCAS)->json();
-    //     dd($marcas);
-    //     $this->marca = $marcas['marcas'];
-    //     dd($this->marcas);
-
-    // }
 
     public function render()
     {
         // return view('livewire.index-form-component');
+        $marcas = Http::get(MyConstants::URL_CONNECTION.MyConstants::URI_MARCAS)->json();
         return view('livewire.index-form-component',[
-            'marcas' => (Http::get(MyConstants::URL_CONNECTION.MyConstants::URI_MARCAS)->json())
+            'marcas' => $marcas
         ]);
     }
+
+    public function updatedselectedMarca($marca_id)
+    {
+        $arrayModelos = [];
+        $getModelos = Http::get(MyConstants::URL_CONNECTION.MyConstants::URI_MODELOS)->json();
+        foreach($getModelos['modelos'] as $modelo){
+            if($modelo['idmarca']== $marca_id){
+                $arrayModelos = Arr::add($arrayModelos, 'idmodelo' , $modelo['idmodelo']);
+                $this->modelos = $arrayModelos;
+            }
+        }
+    }
+
+
 
 }
 

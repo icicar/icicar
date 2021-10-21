@@ -8,5 +8,4 @@
     @include('index.about-us')
 
     @include('index.last-cars')
-
 @endsection

@@ -57,7 +57,8 @@
         @yield('styles')
 
         <!-- Necesario para el funcionamiento de Livewire -->
-        <livewire:styles />
+
+        @livewireStyles
     </head>
     <body class="antialiased">
         {{-- <div id="load_screen">
@@ -233,15 +234,7 @@
 
           <script type="text/javascript" src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
 
-          <script>
-            console.log('ffffffff');
-            $(document).ready(function() {
-                $("#marcas").change(function(){
-                        console.log('entra marcas');
 
-                })
-            });
-        </script>
 
             <!-- bootstrap -->
             <script type="text/javascript" src="{{ asset('assets/js/popper.js') }}"></script>
@@ -355,8 +348,6 @@
 
             </script>
 
-            @yield('scripts')
-
-
+            @livewireScripts
     </body>
 </html>
