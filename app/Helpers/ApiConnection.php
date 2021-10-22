@@ -34,7 +34,7 @@
             return [$httpCode, json_decode($response)];
         }
 
-        public static function getDataApi($uri, $data)
+        public static function getDataApi($url, $data)
         {
             $username = MyConstants::API_USER;
             $password = MyConstants::API_PWD;
@@ -42,7 +42,7 @@
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => $baseUrl.$uri,
+                CURLOPT_URL => $url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -52,6 +52,8 @@
                 CURLOPT_CUSTOMREQUEST => 'GET',
                 CURLOPT_POSTFIELDS =>$data,
                 CURLOPT_USERPWD => "$username:$password",
+
+
             ));
 
             $response = curl_exec($curl);

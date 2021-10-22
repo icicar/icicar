@@ -1,6 +1,7 @@
 <section class="search white-bg">
 
 {{-- {{dd(($marcas['marcas'][0]['marca']))}} --}}
+
     <div class="container">
         <div class="search-block">
             <div class="row">
@@ -9,28 +10,31 @@
                         <div class="col-md-4">
                             <span>Marca</span>
                             <div class="selected-box">
-                                {{-- <select class="selectpicker" wire:click="changeEvent($event.target.value)"> --}}
-                                <select wire:model="selectedMarca" class="selectpicker">
+                                <select class="selectpicker" wire:change="selectedMarca($event.target.value)">
+                                {{-- <select wire:model="selectedMarca" name="selectedMarca" class="selectpicker"> --}}
                                     <option value="">Marca </option>
-                                    @foreach ($marcas['marcas'] as $marca )
-                                        <option value="{{$marca['idmarca']}}">{{$marca['marca']}} </option>
+                                    @foreach ($marcas[1]->marcas as $marca )
+                                        <option value="{{$marca->idmarca}}">{{$marca->marca}} </option>
                                     @endforeach
                                 </select>
 
                             </div>
                         </div>
 
+                        @if(!is_null($selectedMarca))
                         <div class="col-md-4">
                             <span>Modelo</span>
                             <div class="selected-box">
-                                <select wire:model="selectedModelo" class="selectpicker">
-                                    <option value="">Marca </option>
-                                    @foreach($modelos as $modelo)
-                                        <option value="{{$modelo['idmodelo']}}"> {{$modelo['idmodelo']}}</option>
-                                    @endforeach
-                                </select>
+                                <select class="selectpicker">
+                                    <option value="">Modelos </option>
+                                        @foreach($modelos as $modelo)
+                                        {{Log::info($modelo)}}
+                                            <option value="{{$modelo['idmodelo']}}"> {{$modelo['modelo']}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                        </div>
+                            @endif
 
                         <div class="col-md-4">
                             <span>Kilómetros</span>
@@ -46,7 +50,9 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
+
+
+
                 </div>
                 <div class="col-md-4">
                     <div class="row">

@@ -4,34 +4,44 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\constants\MyConstants;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Http;
+use App\Helpers\ApiConnectionHelper;
+use Illuminate\Support\Facades\Log;
 
 class IndexFormComponent extends Component
 {
     // public $marcas;
-    public $selectedMarca = null, $selectedModelo = null;
-    public $modelos = null;
+    public $marcas;
+    public $modelos;
 
+    public $selectedMarca = NULL;
+
+
+
+    public function mount()
+    {
+        $this->marcas = ApiConnectionHelper::getDataApi(MyConstants::HTTPS.MyConstants::API_URL.MyConstants::URI_MARCAS, null);;
+        // $this->marcas = Http::get(MyConstants::URL_CONNECTION.MyConstants::URI_MARCAS)->json();
+        $this->modelos;
+    }
 
     public function render()
     {
-        // return view('livewire.index-form-component');
-        $marcas = Http::get(MyConstants::URL_CONNECTION.MyConstants::URI_MARCAS)->json();
-        return view('livewire.index-form-component',[
-            'marcas' => $marcas
-        ]);
+        return view('livewire.index-form-component');
     }
 
-    public function updatedselectedMarca($idmarca)
+    public function selectedMarca($idmarca)
     {
-        $arrayModelos = [];
-        $getModelos = Http::get(MyConstants::URL_CONNECTION.MyConstants::URI_MODELOS)->json();
-        foreach($getModelos['modelos'] as $modelo){
-            if($modelo['idmarca']== $idmarca){
-                $arrayModelos = Arr::add($arrayModelos, 'idmodelo' , $modelo['idmodelo']);
-                $this->modelos = $arrayModelos;
+        Log::info('id marca' . $idmarca);
+        if(!is_null($idmarca)){
+            $arrayModelos = [];
+            $getModelos = ApiConnectionHelper::getDataApi(MyConstants::HTTPS.MyConstants::API_URL.MyConstants::URI_MODELOS, null);
+            foreach($getModelos[1]->modelos as $modelo){
+                if($modelo->idmarca == $idmarca){
+                    $arrayModelos[] = $modelo;
+                }
             }
+            $this->modelos = $arrayModelos;
+            Log::info(json_encode($arrayModelos));
         }
     }
 

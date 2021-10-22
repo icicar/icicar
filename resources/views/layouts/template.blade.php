@@ -157,9 +157,9 @@
         <footer class="footer-3 footer-topbar light page-section-pt">
             <div class="container">
             <div class="row top">
-              <div class="col-lg-3 col-md-12">
+              {{-- <div class="col-lg-3 col-md-12">
                 <img class="img-fluid" id="logo_footer_dark" src="images/logo-dark.png" alt="">
-              </div>
+              </div> --}}
               <div class="col-lg-5 col-md-12">
                 <div class="footer-nav text-lg-right text-center">
 
@@ -257,7 +257,7 @@
             <script type="text/javascript" src="{{ asset('assets/js/jquery-ui.js') }}"></script>
 
             <!-- select -->
-            <script type="text/javascript" src="{{ asset('assets/js/select/jquery-select.js') }}"></script>
+            {{-- <script type="text/javascript" src="{{ asset('assets/js/select/jquery-select.js') }}"></script> --}}
 
             <!-- magnific popup -->
             <script type="text/javascript" src="{{ asset('assets/js/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
@@ -348,6 +348,7 @@
             })(jQuery);
 
             </script>
+
 
             @livewireScripts
     </body>
