@@ -9,39 +9,30 @@ use Illuminate\Support\Facades\Log;
 
 class IndexFormComponent extends Component
 {
-    // public $marcas;
     public $marcas;
     public $modelos;
+    public $allMarcas = '?all=1&limit=100';
 
     public $selectedMarca = NULL;
 
-
-
     public function mount()
     {
-        $this->marcas = ApiConnectionHelper::getDataApi(MyConstants::HTTPS.MyConstants::API_URL.MyConstants::URI_MARCAS, null);;
-        // $this->marcas = Http::get(MyConstants::URL_CONNECTION.MyConstants::URI_MARCAS)->json();
+        $this->marcas = [];
         $this->modelos;
     }
 
     public function render()
     {
+        $this->marcas = ApiConnectionHelper::getDataApi(MyConstants::HTTPS.MyConstants::API_URL.MyConstants::URI_MARCAS, $this->allMarcas);
         return view('livewire.index-form-component');
     }
 
     public function selectedMarca($idmarca)
     {
-        Log::info('id marca' . $idmarca);
         if(!is_null($idmarca)){
-            $arrayModelos = [];
-            $getModelos = ApiConnectionHelper::getDataApi(MyConstants::HTTPS.MyConstants::API_URL.MyConstants::URI_MODELOS, null);
-            foreach($getModelos[1]->modelos as $modelo){
-                if($modelo->idmarca == $idmarca){
-                    $arrayModelos[] = $modelo;
-                }
-            }
-            $this->modelos = $arrayModelos;
-            Log::info(json_encode($arrayModelos));
+            $data = '?idmarca='. $idmarca;
+            $this->modelos = ApiConnectionHelper::getDataApi(MyConstants::HTTPS.MyConstants::API_URL.MyConstants::URI_MODELOS, $data);
+            $this->selectedMarca = $idmarca;
         }
     }
 

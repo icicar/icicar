@@ -36,13 +36,14 @@
 
         public static function getDataApi($url, $data)
         {
+
             $username = MyConstants::API_USER;
             $password = MyConstants::API_PWD;
             $baseUrl = MyConstants::API_URL;
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => $url,
+                CURLOPT_URL => $url.$data,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -50,15 +51,14 @@
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-                CURLOPT_POSTFIELDS =>$data,
                 CURLOPT_USERPWD => "$username:$password",
 
 
             ));
-
             $response = curl_exec($curl);
-            // dd(json_decode($response));
+            //  dd(json_decode($response));
             $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            // if($data != null) dd($curl);
             curl_close($curl);
 
             return [$httpCode, json_decode($response)];

@@ -1,11 +1,13 @@
 <section class="search white-bg">
 
-{{-- {{dd(($marcas['marcas'][0]['marca']))}} --}}
-
+    {{-- {{dd(($marcas['marcas'][0]['marca']))}} --}}
+    {{ Log::info('Marcas blade: ' . json_encode($marcas)) }}
+    {{ Log::info('Modelos Blade: ' . json_encode($modelos)) }}
+    {{Log::info('marca seleccionada: ' . $selectedMarca)}}
     <div class="container">
         <div class="search-block">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-4">
                             <span>Marca</span>
@@ -21,22 +23,21 @@
                             </div>
                         </div>
 
-                        @if(!is_null($selectedMarca))
                         <div class="col-md-4">
                             <span>Modelo</span>
                             <div class="selected-box">
                                 <select class="selectpicker">
                                     <option value="">Modelos </option>
-                                        @foreach($modelos as $modelo)
-                                        {{Log::info($modelo)}}
-                                            <option value="{{$modelo['idmodelo']}}"> {{$modelo['modelo']}}</option>
+                                    @if(!is_null($selectedMarca))
+                                        @foreach($modelos[1]->modelos as $modelo)
+                                            <option value="{{$modelo->idmodelo}}" selected> {{$modelo->modelo}}</option>
                                         @endforeach
-                                    </select>
-                                </div>
+                                    @endif
+                                </select>
                             </div>
-                            @endif
+                        </div>
 
-                        <div class="col-md-4">
+                        {{-- <div class="col-md-4">
                             <span>Kilómetros</span>
                             <div class="selected-box">
                                 <select class="selectpicker">
@@ -49,27 +50,24 @@
                                     <option>+100.000</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="price-slide">
+                                        <div class="price">
+                                            <label for="amount">Rango de precio</label>
+                                            <input type="text" id="amount" class="amount" value="5.000€ - 90.000€" />
+                                            <div id="slider-range"></div>
 
-
-
-                </div>
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div class="price-slide">
-                                <div class="price">
-                                    <label for="amount">Rango de precio</label>
-                                    <input type="text" id="amount" class="amount" value="5.000€ - 90.000€" />
-                                    <div id="slider-range"></div>
-
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <a class="button  col-md-12 col-xs-12" href="#">Buscar</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5">
-                            <a class="button  col-md-12 col-xs-12" href="#">Buscar</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
