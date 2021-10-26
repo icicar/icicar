@@ -52,13 +52,15 @@
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
                 CURLOPT_USERPWD => "$username:$password",
-
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_SSL_VERIFYPEER => false,
 
             ));
             $response = curl_exec($curl);
-            //  dd(json_decode($response));
             $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            // if($data != null) dd($curl);
+            if (curl_errno($curl)) {
+                print curl_error($curl);
+             }
             curl_close($curl);
 
             return [$httpCode, json_decode($response)];

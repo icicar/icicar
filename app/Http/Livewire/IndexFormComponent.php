@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\constants\MyConstants;
 use App\Helpers\ApiConnectionHelper;
+use Symfony\Component\HttpFoundation\Request;
 use Illuminate\Support\Facades\Log;
 
 class IndexFormComponent extends Component
@@ -14,6 +15,8 @@ class IndexFormComponent extends Component
     public $allMarcas = '?all=1&limit=100';
 
     public $selectedMarca = NULL;
+    public $selectedModelo = NULL;
+    public $resultadosEncontrados = NULL;
 
     public function mount()
     {
@@ -36,7 +39,21 @@ class IndexFormComponent extends Component
         }
     }
 
+    public function selectedModelo($idmodelo)
+    {
+        if(!is_null($idmodelo)){
+            $data = '?idmarca='. $this->selectedMarca;
+            $this->modelos = ApiConnectionHelper::getDataApi(MyConstants::HTTPS.MyConstants::API_URL.MyConstants::URI_MODELOS, $data);
+            $this->selectedModelo = $idmodelo;
+        }
+    }
 
+    public function getResultados(Request $request){
+        Log::info('llega: marca seleccionada='.$this->selectedMarca.' modelo seleccionado='.$this->selectedModelo);
+
+
+            return redirect()->route('listado_vehiculos')->with('selectedMarca',  $this->selectedMarca);
+    }
 
 }
 

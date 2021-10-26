@@ -6,8 +6,9 @@ use Livewire\Component;
 
 class CarListingComponent extends Component
 {
-    public function render()
+    public function render($selectedMarca)
     {
+        dd($selectedMarca);
         return view('livewire.car-listing-component');
     }
 }

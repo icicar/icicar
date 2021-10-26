@@ -29,7 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::view('/contacto', 'contact.contact');
 Route::view('/detalles-vehiculo', 'car-details.car-details');
-Route::view('/listado-vehiculos', 'car-listing.car-listing');
+Route::view('/listado-vehiculos', 'car-listing.car-listing')->name('listado_vehiculos');
 Route::view('/politica-privacidad', 'policies.privacy-policy');
 Route::view('/politica-cookies', 'policies.cookies-policy');
 Route::view('/aviso-legal', 'policies.legal-advidsory');
