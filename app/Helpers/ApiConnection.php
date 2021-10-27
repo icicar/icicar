@@ -63,7 +63,6 @@
              }
 
              curl_close($curl);
-             //dd(json_decode($response));
             return [$httpCode, json_decode($response)];
         }
 
