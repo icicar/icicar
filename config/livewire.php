@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'asset_url' => 'http://localhost/icicar/public',
+    'asset_url' => 'http://localhost/new-icicar/public',
 
     /*
     |--------------------------------------------------------------------------

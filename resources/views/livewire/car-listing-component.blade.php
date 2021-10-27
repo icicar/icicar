@@ -1,4 +1,5 @@
 
+
 <section class="product-listing page-section-ptb">
     <div class="container">
         <div class="row">
@@ -416,6 +417,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-9 col-md-8">
                 <div class="sorting-options-main">
                     <div class="row">
@@ -480,6 +482,8 @@
                         </div>
                     </div>
                 </div>
+                @foreach($vehiculos[1]->vehiculos as $vehiculo)
+                {{-- {{dd($vehiculo)}} --}}
                 <div class="car-grid">
                     <div class="row">
                         <div class="col-lg-4 col-md-12">
@@ -495,10 +499,11 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-8 col-md-12">
                             <div class="car-details">
                                 <div class="car-title">
-                                    <a href="#">Acura Rsx</a>
+                                    <a href="#">{{$vehiculo->version}}</a>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam
                                         repellendus non voluptate. Harum blanditiis ullam deleniti.</p>
                                 </div>
@@ -518,46 +523,8 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-
-                <div class="car-grid">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12">
-                            <div class="car-item gray-bg text-center">
-                                <div class="car-image">
-                                    <img class="img-fluid" src="images/car/01.jpg" alt="">
-                                    <div class="car-overlay-banner">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-md-12">
-                            <div class="car-details">
-                                <div class="car-title">
-                                    <a href="#">Acura Rsx</a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam
-                                        repellendus non voluptate. Harum blanditiis ullam deleniti.</p>
-                                </div>
-                                <div class="price">
-                                    <span class="old-price">$35,568</span>
-                                    <span class="new-price">$32,698 </span>
-                                    <a class="button red float-right" href="#">Details</a>
-                                </div>
-                                <div class="car-list">
-                                    <ul class="list-inline">
-                                        <li><i class="fa fa-registered"></i> 2016</li>
-                                        <li><i class="fa fa-cog"></i> Manual </li>
-                                        <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
 
 
@@ -573,6 +540,7 @@
                     </ul>
                 </div>
             </div>
+
         </div>
     </div>
 </section>

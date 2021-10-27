@@ -25,9 +25,9 @@ class CarListingComponent extends Component
         $this->selectedModelo=$request->session()->get('selectedModelo');
         $data="?idmarca=".$this->selectedMarca."&idmodelo=".$this->selectedModelo;
         //dd($request->session()->get('selectedMarca'));
-        //dd($data);
+
         $this->vehiculos = ApiConnectionHelper::getDataApi(MyConstants::HTTPS.MyConstants::API_URL.MyConstants::URI_VEHICULOS, $data);
-        dd($this->vehiculos);
+        // dd(json_encode($this->vehiculos));
         return view('livewire.car-listing-component');
     }
 }
