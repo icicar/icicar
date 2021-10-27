@@ -52,7 +52,9 @@ class IndexFormComponent extends Component
         Log::info('llega: marca seleccionada='.$this->selectedMarca.' modelo seleccionado='.$this->selectedModelo);
 
 
-            return redirect()->route('listado_vehiculos')->with('selectedMarca',  $this->selectedMarca);
+        return redirect()->to('listado-vehiculos')
+            ->with('selectedMarca',  $this->selectedMarca)
+            ->with('selectedModelo', $this->selectedModelo);
     }
 
 }
