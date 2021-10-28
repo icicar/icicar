@@ -3,7 +3,7 @@
 use App\Http\Controllers\VehiculosController;
 use App\Http\Livewire\IndexFormComponent;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
