@@ -5,8 +5,9 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\constants\MyConstants;
 use App\Helpers\ApiConnectionHelper;
-use Symfony\Component\HttpFoundation\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 
 class IndexFormComponent extends Component
 {
@@ -49,9 +50,6 @@ class IndexFormComponent extends Component
     }
 
     public function getResultados(Request $request){
-        Log::info('llega: marca seleccionada='.$this->selectedMarca.' modelo seleccionado='.$this->selectedModelo);
-
-
         return redirect()->to('listado-vehiculos')
             ->with('selectedMarca',  $this->selectedMarca)
             ->with('selectedModelo', $this->selectedModelo);

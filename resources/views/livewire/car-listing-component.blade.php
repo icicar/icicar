@@ -503,20 +503,26 @@
                         <div class="col-lg-8 col-md-12">
                             <div class="car-details">
                                 <div class="car-title">
-                                    <a href="#">{{$vehiculo->version}}</a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam
-                                        repellendus non voluptate. Harum blanditiis ullam deleniti.</p>
+                                    <a href="#">{{$vehiculo->marca}} - {{$vehiculo->modelo}} {{$vehiculo->version}}</a>
+                                    {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam
+                                        repellendus non voluptate. Harum blanditiis ullam deleniti.</p> --}}
                                 </div>
                                 <div class="price">
-                                    <span class="old-price">$35,568</span>
-                                    <span class="new-price">$32,698 </span>
+                                    {{-- Precio a mostrar a los usuarios logueados --}}
+                                    @if(Auth::user())
+                                        <span class="old-price">{{round($vehiculo->precio)}} € </span>
+                                    @else
+                                    {{-- number_format(123456789, 0, '', '.') --}}
+                                        <span class="new-price">{{number_format(round($vehiculo->precio),0,'','.')}} € </span>
+                                    @endif
                                     <a class="button red float-right" href="#">Details</a>
                                 </div>
                                 <div class="car-list">
                                     <ul class="list-inline">
-                                        <li><i class="fa fa-registered"></i> 2016</li>
-                                        <li><i class="fa fa-cog"></i> Manual </li>
-                                        <li><i class="fa fa-shopping-cart"></i> 6,000 mi</li>
+                                        <li> {{$vehiculo->carburante}} </li>
+                                        <li> Manual </li>
+                                        <li> {{number_format($vehiculo->kms,0,'','.')}} km.</li>
+                                        <li> {{substr($vehiculo->fechamatricula,-4)}} </li>
                                     </ul>
                                 </div>
                             </div>

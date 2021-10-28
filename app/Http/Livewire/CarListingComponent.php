@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Livewire\Component;
 use App\Helpers\ApiConnectionHelper;
 use App\constants\MyConstants;
+use Illuminate\Support\Facades\Session;
 
 class CarListingComponent extends Component
 {
@@ -14,9 +15,15 @@ class CarListingComponent extends Component
     public $vehiculos;
 
 
-    public function mount()
+    public function mount(Request $request)
     {
+        // dd($request->session());
         $this->vehiculos = [];
+        $this->selectedMarca=$request->session()->get('selectedMarca');
+        $this->selectedModelo=$request->session()->get('selectedModelo');
+        Session::put('selectedMarca', $this->selectedMarca);
+        Session::put('selectedModelo', $this->selectedModelo);
+
     }
 
     public function render(Request $request)
