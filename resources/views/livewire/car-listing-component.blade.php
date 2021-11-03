@@ -515,7 +515,7 @@
                                     {{-- number_format(123456789, 0, '', '.') --}}
                                         <span class="new-price">{{number_format(round($vehiculo->precio),0,'','.')}} € </span>
                                     @endif
-                                    <a class="button red float-right" href="#">Details</a>
+                                    <button class="button red float-right"  wire:click="getDetalleVehiculo({{$vehiculo->idvehiculoopera}})">Ver vehiculo</button>
                                 </div>
                                 <div class="car-list">
                                     <ul class="list-inline">

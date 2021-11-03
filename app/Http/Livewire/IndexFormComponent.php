@@ -50,6 +50,7 @@ class IndexFormComponent extends Component
     }
 
     public function getResultados(Request $request){
+
         return redirect()->to('listado-vehiculos')
             ->with('selectedMarca',  $this->selectedMarca)
             ->with('selectedModelo', $this->selectedModelo);
