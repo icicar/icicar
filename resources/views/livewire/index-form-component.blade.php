@@ -45,7 +45,7 @@
                                     <div class="price-slide">
                                         <div class="price">
                                             <label for="amount">Rango de precio</label>
-                                            <input type="text" name="amount" id="amount" class="amount" value="5.000€ - 90.000€" />
+                                            <input type="text" name="amount" id="amount" class="amount" value="{{number_format(round($rangoPrecios['1']->preciomin),0,'','.')}} € - {{number_format(round($rangoPrecios['1']->preciomax),0,'','.')}} €" />
                                             <div id="slider-range"></div>
 
                                         </div>

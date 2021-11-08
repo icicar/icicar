@@ -6,13 +6,12 @@ use Livewire\Component;
 use App\constants\MyConstants;
 use App\Helpers\ApiConnectionHelper;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Session;
 
 class IndexFormComponent extends Component
 {
     public $marcas;
     public $modelos;
+    public $rangoPrecios;
     public $allMarcas = '?all=1&limit=100';
 
     public $selectedMarca = NULL;
@@ -23,11 +22,13 @@ class IndexFormComponent extends Component
     {
         $this->marcas = [];
         $this->modelos;
+        $this->rangoPrecios;
     }
 
     public function render()
     {
         $this->marcas = ApiConnectionHelper::getDataApi(MyConstants::HTTPS.MyConstants::API_URL.MyConstants::URI_MARCAS, $this->allMarcas);
+        $this->rangoPrecios = ApiConnectionHelper::getApi(MyConstants::API_FULL_URL.MyConstants::URI_PRECIO_MIN_MAX);
         return view('livewire.index-form-component');
     }
 
@@ -47,6 +48,12 @@ class IndexFormComponent extends Component
             $this->modelos = ApiConnectionHelper::getDataApi(MyConstants::HTTPS.MyConstants::API_URL.MyConstants::URI_MODELOS, $data);
             $this->selectedModelo = $idmodelo;
         }
+    }
+
+    public function getMinMaxPrice()
+    {
+        $this->rangoPrecios = ApiConnectionHelper::getApi(MyConstants::API_FULL_URL.MyConstants::URI_PRECIO_MIN_MAX);
+
     }
 
     public function getResultados(Request $request){

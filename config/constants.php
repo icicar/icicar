@@ -7,6 +7,7 @@ class MyConstants {
     const API_URL =  'www.quavitam.net/quarem/apiicicar/v1/';
     const HTTPS = 'https://';
     const URL_CONNECTION = self::HTTPS.self::API_USER.':'.self::API_PWD.'@'.self::API_URL;
+    const API_FULL_URL = 'https://www.quavitam.net/quarem/apiicicar/v1/';
 
     const URI_MARCAS = 'marcas';
     const URI_MODELOS = 'modelos';
@@ -19,5 +20,6 @@ class MyConstants {
     const URI_MUNICIPIOS = 'municipios';
     const URI_VEHICULOS = 'vehiculos';
     const URI_OFERTAS = 'ofertas';
+    const URI_PRECIO_MIN_MAX = 'preciosminmax';
 }
 

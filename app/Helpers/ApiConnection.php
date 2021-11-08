@@ -5,17 +5,16 @@
 
     class ApiConnectionHelper
     {
-        public static function getApi($uri)
+        public static function getApi($url)
         {
 
             $username = MyConstants::API_USER;
             $password = MyConstants::API_PWD;
-            $baseUrl = MyConstants::API_URL;
 
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => $baseUrl. $uri,
+                CURLOPT_URL => $url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -34,16 +33,15 @@
             return [$httpCode, json_decode($response)];
         }
 
-        public static function getDataApi($url, $data)
+        public static function getDataApi($url)
         {
 
             $username = MyConstants::API_USER;
             $password = MyConstants::API_PWD;
-            $baseUrl = MyConstants::API_URL;
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => $url.$data,
+                CURLOPT_URL => $url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
