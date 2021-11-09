@@ -170,7 +170,6 @@ var POTENZA = {};
     var indice = precios.indexOf("-");
 
     var precioMin = parseInt(precios.substring(0, indice-2).split('.').join(''));
-
     var precioMax = parseInt(precios.substring(indice+1, precios.length-2).split('.').join(''));
         $("#slider-range,#slider-range-2").slider({
             range: true,
@@ -178,11 +177,15 @@ var POTENZA = {};
             max: precioMax,
             values: [precioMin, precioMax],
             slide: function(event, ui) {
+                console.log('entra');
                 var min = ui.values[0],
                     max = ui.values[1];
-                  $('#' + this.id).prev().val("$" + min + " - $" + max);
+                  $('#' + this.id).prev().val(min + " € - " + max + " €");
+                  $("#precioMin").val(min);
+                  $("#precioMax").val(max);
             }
         });
+
     }
   }
 

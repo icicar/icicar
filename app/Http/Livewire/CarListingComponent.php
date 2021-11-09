@@ -11,11 +11,14 @@ class CarListingComponent extends Component
 {
     public $selectedMarca;
     public $selectedModelo;
+    public $minPrecio;
+    public $maxPrecio;
     public $vehiculos;
 
 
     public function mount(Request $request)
     {
+        dd($request->session());
         $this->vehiculos = [];
         $this->selectedMarca=$request->session()->get('selectedMarca');
         $this->selectedModelo=$request->session()->get('selectedModelo');

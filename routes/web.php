@@ -45,6 +45,3 @@ Route::get('get-paises', [VehiculosController::class,'getPaises']);
 Route::get('get-provincias', [VehiculosController::class,'getProvincias']);
 Route::get('get-municipios', [VehiculosController::class,'getMunicipios']);
 Route::get('get-vehiculos', [VehiculosController::class,'getVehiculos']);
-
-// Route::get('change-event', ChangeEvent::class);
-// Route::get('/marcas', [IndexFormComponent::class]);

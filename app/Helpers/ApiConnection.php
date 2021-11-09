@@ -33,7 +33,7 @@
             return [$httpCode, json_decode($response)];
         }
 
-        public static function getDataApi($url)
+        public static function getDataApi($url, $data)
         {
 
             $username = MyConstants::API_USER;
@@ -41,7 +41,7 @@
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => $url,
+                CURLOPT_URL => $url.$data,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
