@@ -348,7 +348,23 @@
             })(jQuery);
 
             </script>
+            <script>
+                //console.log('entra1');
 
+                $(document).ready(function () {
+                    window.livewire.on('lanzar', () => {
+
+                        POTENZA.priceslider(),
+                        $('#slider-range').addClass('ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all'),
+                        $("#slider-range").prepend("<div class='ui-slider-range ui-widget-header ui-corner-all' style='width: 100%; left: 0%;'></div>"),
+                        $("#slider-range").remove("<div class='ui-slider-range ui-widget-header ui-corner-all' style='width: 100%; left: 0%;'></div>")
+
+
+
+
+                    });
+                });
+                </script>
 
             @livewireScripts
     </body>

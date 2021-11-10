@@ -177,7 +177,6 @@ var POTENZA = {};
             max: precioMax,
             values: [precioMin, precioMax],
             slide: function(event, ui) {
-                console.log('entra');
                 var min = ui.values[0],
                     max = ui.values[1];
                   $('#' + this.id).prev().val(min + " € - " + max + " €");
@@ -580,6 +579,7 @@ var POTENZA = {};
   $window.on("load",function(){
           POTENZA.preloader(),
           POTENZA.Isotope(),
+          POTENZA.priceslider(),
           POTENZA.masonry();
     });
   //Document ready functions

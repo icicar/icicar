@@ -53,36 +53,6 @@
                                     </div>
                                 </div>
 
-                                <script>
-                                    window.onload = function() {
-                                    document.addEventListener('livewire:load', function() {
-                                        POTENZA.priceslider = function () {
-                                            if($(".price-slide,.price-slide-2").exists()) {
-                                                var precios = $('#amount').val();
-                                                var indice = precios.indexOf("-");
-
-                                                var precioMin = parseInt(precios.substring(0, indice-2).split('.').join(''));
-                                                var precioMax = parseInt(precios.substring(indice+1, precios.length-2).split('.').join(''));
-                                                    $("#slider-range,#slider-range-2").slider({
-                                                        range: true,
-                                                        min: precioMin,
-                                                        max: precioMax,
-                                                        values: [precioMin, precioMax],
-                                                        slide: function(event, ui) {
-                                                            var min = ui.values[0],
-                                                                max = ui.values[1];
-                                                            $('#' + this.id).prev().val(min + " € - " + max + " €");
-                                                            $("#precioMin").val(min);
-                                                            $("#precioMax").val(max);
-                                                        }
-                                                    });
-
-                                                }
-                                            }
-                                    });
-
-                                }
-                                </script>
 
                                 <div class="col-md-4">
                                     <button type="submit" class="button  col-md-12 col-xs-12">Buscar</button>

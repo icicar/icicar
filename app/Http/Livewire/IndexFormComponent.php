@@ -34,7 +34,7 @@ class IndexFormComponent extends Component
     {
         $this->marcas = ApiConnectionHelper::getDataApi(MyConstants::HTTPS.MyConstants::API_URL.MyConstants::URI_MARCAS, $this->allMarcas);
         $this->rangoPrecios = ApiConnectionHelper::getApi(MyConstants::API_FULL_URL.MyConstants::URI_PRECIO_MIN_MAX);
-
+        $this->emit('lanzar');
         return view('livewire.index-form-component');
 
     }
@@ -45,7 +45,7 @@ class IndexFormComponent extends Component
             $data = '?idmarca='. $idmarca;
             $this->modelos = ApiConnectionHelper::getDataApi(MyConstants::API_FULL_URL.MyConstants::URI_MODELOS, $data);
             $this->selectedMarca = $idmarca;
-
+            $this->emit('lanzar');
         }
     }
 
