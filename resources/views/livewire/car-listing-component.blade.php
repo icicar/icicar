@@ -7,14 +7,35 @@
                         <div class="widget-search">
                             <h5>Advanced Search</h5>
                             <ul class="list-style-none">
-                                <li><i class="fas fa-star"> </i> Results Found <span class="float-right">(39)</span>
+                                <li><i class="fas fa-star"> </i> Vehículos encontrados <span
+                                        class="float-right">{{ $vehiculos[1]->totalelements }}</span>
                                 </li>
-                                <li><i class="fas fa-shopping-cart"> </i> Compare Vehicles <span
-                                        class="float-right">(10)</span></li>
+                                {{-- <li>
+                                    <i class="fas fa-shopping-cart"> </i> Compare Vehicles
+                                    <span class="float-right">(10)</span>
+                                </li> --}}
                             </ul>
                         </div>
+                        {{-- Años --}}
                         <div class="clearfix">
                             <ul class="list-group">
+                                <li class="list-group-item">
+                                    <a href="#">Precio</a>
+                                    <ul>
+                                        <li>
+                                            <div class="price-slide">
+                                                <div class="price">
+                                                    <input type="text" name="amount" id="amount" class="amount"
+                                                        value="{{-- {{number_format(round($rangoPrecios['1']->preciomin),0,'','.')}} € - {{number_format(round($rangoPrecios['1']->preciomax),0,'','.')}} € --}} 7500 - 8500 " />
+                                                    <div id="slider-range"></div>
+                                                    {{-- <input type="hidden" name="precioMin"  id="precioMin" value="{{$rangoPrecios['1']->preciomin}}" wire:change="selectedPrecioMin($event.target.value)">
+                                                    <input type="hidden" name="precioMax"  id="precioMax" value="{{$rangoPrecios['1']->preciomax}}" wire:change="selectedPrecioMax($event.target.value)"> --}}
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </li>
                                 <li class="list-group-item">
                                     <a href="#">Year</a>
                                     <ul>
@@ -409,6 +430,7 @@
                                 </li>
                             </ul>
                         </div>
+                        {{-- Fin Años --}}
                     </div>
                     <div class="widget-banner">
                         <img class="img-fluid center-block" src="images/banner.jpg" alt="">
@@ -480,72 +502,151 @@
                         </div>
                     </div>
                 </div>
-                @foreach($vehiculos[1]->vehiculos as $vehiculo)
-                {{-- {{dd($vehiculo)}} --}}
-                <div class="car-grid">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12">
+
+                <div class="row">
+                    @foreach ($vehiculos[1]->vehiculos as $vehiculo)
+                        <div class="col-lg-4">
                             <div class="car-item gray-bg text-center">
                                 <div class="car-image">
-                                    @if(isset($vehiculo->fotos))
-                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                            <div class="carousel-inner">
-                                                @foreach($vehiculo->fotos as $foto)
-                                                    @if($foto->portada == 1)
-                                                        <div class="carousel-item active">
-                                                            <img class="d-block w-100" src="{{$foto->foto}}" alt="First slide">
-                                                        </div>
-                                                    @else
-                                                        <div class="carousel-item">
-                                                            <img class="d-block w-100" src="{{$foto->foto}}" alt="First slide">
-                                                        </div>
-                                                    @endif
-                                                @endforeach
+                                    @if (isset($vehiculo->fotos))
+                                            <div id="carouselExampleControls" class="carousel slide"
+                                                data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    @foreach ($vehiculo->fotos as $foto)
+                                                        @if ($foto->portada == 1)
+                                                            <div class="carousel-item active">
+                                                                <img class="d-block w-100" src="{{ $foto->foto }}"
+                                                                    alt="First slide">
+                                                            </div>
+                                                        @else
+                                                            <div class="carousel-item">
+                                                                <img class="d-block w-100" src="{{ $foto->foto }}"
+                                                                    alt="First slide">
+                                                            </div>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
+                                                <a class="carousel-control-prev" href="#carouselExampleControls"
+                                                    role="button" data-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#carouselExampleControls"
+                                                    role="button" data-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
                                             </div>
-                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Previous</span>
-                                            </a>
-                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Next</span>
-                                            </a>
-                                        </div>
-                                    @endif
+                                        @endif
+
+                                </div>
+
+                                <div class="car-content">
+                                    <div class="star">
+                                        {{ number_format($vehiculo->kms, 0, '', '.') }} km. |
+                                        {{ $vehiculo->carburante }} |
+                                        {{ substr($vehiculo->fechamatricula, -4) }} |
+                                        {{ $vehiculo->tipocambio }}
+                                    </div>
+                                    <a href="#">
+                                        <span class="text-center"> {{ $vehiculo->marca }} </span>
+                                        <br>
+                                        <span class="car-item-modelo-version">  {{ ucfirst($vehiculo->modelo) }} {{ ucfirst(strtolower($vehiculo->version)) }} </span>
+                                    </a>
+                                    <div class="separator"></div>
+                                    <div class="price">
+                                        @if (Auth::user())
+                                            <span class="old-price">{{ round($vehiculo->precio) }} € </span>
+                                        @else
+                                            {{-- number_format(123456789, 0, '', '.') --}}
+                                            <span
+                                                class="new-price">{{ number_format(round($vehiculo->precio), 0, '', '.') }}
+                                                € </span>
+                                        @endif
+
+                                    </div>
+                                    <button class="button red "
+                                            wire:click="getDetalleVehiculo({{ $vehiculo->idvehiculoopera }})">Ver
+                                            vehiculo</button>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
 
-                        <div class="col-lg-8 col-md-12">
-                            <div class="car-details">
-                                <div class="car-title">
-                                    <a href="#">{{$vehiculo->marca}} - {{$vehiculo->modelo}} {{$vehiculo->version}}</a>
-                                    {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam
-                                        repellendus non voluptate. Harum blanditiis ullam deleniti.</p> --}}
+                </div>
+                {{-- @foreach ($vehiculos[1]->vehiculos as $vehiculo)
+                    <div class="car-grid">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-12">
+                                <div class="car-item gray-bg text-center">
+                                    <div class="car-image">
+                                        @if (isset($vehiculo->fotos))
+                                            <div id="carouselExampleControls" class="carousel slide"
+                                                data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    @foreach ($vehiculo->fotos as $foto)
+                                                        @if ($foto->portada == 1)
+                                                            <div class="carousel-item active">
+                                                                <img class="d-block w-100" src="{{ $foto->foto }}"
+                                                                    alt="First slide">
+                                                            </div>
+                                                        @else
+                                                            <div class="carousel-item">
+                                                                <img class="d-block w-100" src="{{ $foto->foto }}"
+                                                                    alt="First slide">
+                                                            </div>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
+                                                <a class="carousel-control-prev" href="#carouselExampleControls"
+                                                    role="button" data-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#carouselExampleControls"
+                                                    role="button" data-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>
+                                        @endif
+                                    </div>
                                 </div>
-                                <div class="price">
-                                    {{-- Precio a mostrar a los usuarios logueados --}}
-                                    @if(Auth::user())
-                                        <span class="old-price">{{round($vehiculo->precio)}} € </span>
-                                    @else
-                                    {{-- number_format(123456789, 0, '', '.') --}}
-                                        <span class="new-price">{{number_format(round($vehiculo->precio),0,'','.')}} € </span>
-                                    @endif
-                                    <button class="button red float-right"  wire:click="getDetalleVehiculo({{$vehiculo->idvehiculoopera}})">Ver vehiculo</button>
-                                </div>
-                                <div class="car-list">
-                                    <ul class="list-inline">
-                                        <li> {{$vehiculo->carburante}} </li>
-                                        <li> Manual </li>
-                                        <li> {{number_format($vehiculo->kms,0,'','.')}} km.</li>
-                                        <li> {{substr($vehiculo->fechamatricula,-4)}} </li>
-                                    </ul>
+                            </div>
+
+                            <div class="col-lg-8 col-md-12">
+                                <div class="car-details">
+                                    <div class="car-title">
+                                        <a href="#">{{ $vehiculo->marca }} - {{ $vehiculo->modelo }}
+                                            {{ $vehiculo->version }}</a>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam
+                                        repellendus non voluptate. Harum blanditiis ullam deleniti.</p>
+                                    </div>
+                                    <div class="price">
+                                        @if (Auth::user())
+                                            <span class="old-price">{{ round($vehiculo->precio) }} € </span>
+                                        @else
+                                            <span
+                                                class="new-price">{{ number_format(round($vehiculo->precio), 0, '', '.') }}
+                                                € </span>
+                                        @endif
+                                        <button class="button red float-right"
+                                            wire:click="getDetalleVehiculo({{ $vehiculo->idvehiculoopera }})">Ver
+                                            vehiculo</button>
+                                    </div>
+                                    <div class="car-list">
+                                        <ul class="list-inline">
+                                            <li> {{ $vehiculo->carburante }} </li>
+                                            <li> Manual </li>
+                                            <li> {{ number_format($vehiculo->kms, 0, '', '.') }} km.</li>
+                                            <li> {{ substr($vehiculo->fechamatricula, -4) }} </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                @endforeach
+                @endforeach --}}
 
 
 

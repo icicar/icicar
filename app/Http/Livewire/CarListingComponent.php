@@ -18,7 +18,6 @@ class CarListingComponent extends Component
 
     public function mount(Request $request)
     {
-        dd($request->session());
         $this->vehiculos = [];
         $this->selectedMarca=$request->session()->get('selectedMarca');
         $this->selectedModelo=$request->session()->get('selectedModelo');
