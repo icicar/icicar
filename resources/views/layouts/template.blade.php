@@ -364,6 +364,7 @@
 
                     });
                 });
+                console.log('objeto:'+JSON.stringify($('#slider-range')));
                 </script>
 
             @livewireScripts
