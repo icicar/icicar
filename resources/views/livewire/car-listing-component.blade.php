@@ -1,3 +1,4 @@
+{{ dd($selectedPrecioMin) }}
 <section class="product-listing page-section-ptb">
     <div class="container">
         <div class="row">
