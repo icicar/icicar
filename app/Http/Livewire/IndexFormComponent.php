@@ -16,18 +16,26 @@ class IndexFormComponent extends Component
 
     public $selectedMarca = NULL;
     public $selectedModelo = NULL;
-    public $selectedPrecioMin = NULL;
-    public $selectedPrecioMax = NULL;
+    public $selectedPrecioMin;
+    public $selectedPrecioMax;
     public $resultadosEncontrados = NULL;
+    public $selectedAmount;
 
     public function mount()
     {
         $this->marcas = [];
         $this->modelos;
+        $this->rangoPrecios;
+        $this->selectedAmount;
         $this->selectedPrecioMin;
         $this->selectedPrecioMax;
-        $this->rangoPrecios;
+    }
 
+    public function updatedselectedPrecioMin($selectedPrecioMin)
+    {
+        $this->goal->update([
+            'selectedPrecioMin' => $selectedPrecioMin
+        ]);
     }
 
     public function render()
@@ -58,14 +66,9 @@ class IndexFormComponent extends Component
         }
     }
 
-    public function selectedPrecioMin($precioMin)
+    public function selectedAmount($amount)
     {
-        $this->selectedPrecioMin = $precioMin;
-    }
-
-    public function selectedPrecioMax($precioMax)
-    {
-        $this->selectedPrecioMax = $precioMax;
+        $this->selectedAmount = $amount;
     }
 
     public function getMinMaxPrice()
@@ -74,10 +77,10 @@ class IndexFormComponent extends Component
     }
 
     public function getResultados(Request $request){
-
         return redirect()->to('listado-vehiculos')
             ->with('selectedMarca',  $this->selectedMarca)
             ->with('selectedModelo', $this->selectedModelo)
+            ->with('selectedAmount', $this->selectedAmount)
             ->with('selectedPrecioMin' , $this->selectedPrecioMin)
             ->with('selectedPrecioMax' , $this->selectedPrecioMax);
     }

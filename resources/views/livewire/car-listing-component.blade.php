@@ -1,4 +1,3 @@
-{{ dd($selectedPrecioMin) }}
 <section class="product-listing page-section-ptb">
     <div class="container">
         <div class="row">
@@ -482,7 +481,6 @@
                     </div>
                 </div>
                 @foreach($vehiculos[1]->vehiculos as $vehiculo)
-                {{-- {{dd($vehiculo)}} --}}
                 <div class="car-grid">
                     <div class="row">
                         <div class="col-lg-4 col-md-12">
