@@ -12,6 +12,8 @@ class MyConstants {
     const URI_MARCAS = 'marcas';
     const URI_MODELOS = 'modelos';
     const URI_CARBURANTES = 'carburantes';
+    const URI_CARROCERIAS = 'carrocerias';
+    const URI_TIPOS_CAMBIO = 'tiposcambio';
     const URI_TIPOS_OFERTA = 'tiposoferta';
     const URI_TIPOS_PERSONA = 'tipospersona';
     const URI_TRATAMIENTOS_PERSONA = 'tratamientosper';

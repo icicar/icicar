@@ -16,7 +16,7 @@ Design and Developed by: potenzaglobalsolutions.com
 
 /*************************
        1700px
-*************************/   
+*************************/
 @media (max-width: 1800px) {
 /*************************************
             Version 2.2 css
@@ -42,7 +42,7 @@ Design and Developed by: potenzaglobalsolutions.com
 **************************************/
  /*landing-page*/
 .awards-section .horsepower-bg { padding: 90px 40px; }
- 
+
 
 
 }
@@ -56,7 +56,7 @@ Design and Developed by: potenzaglobalsolutions.com
 .recent-vehicle .isotope.column-4 .grid-item { width: 33.333% }
 .content-box-5 a { font-size: 22px; }
 .our-team .owl-carousel .owl-item img { width: 100%; }
-.masonry.columns-4 .masonry-item { width:33.333%; } 
+.masonry.columns-4 .masonry-item { width:33.333%; }
 .sorting-options-main .pagination li a { margin: 0 1px; }
 .car-details .details-nav ul li a { padding: 10px 8px; }
 .car-details .details-nav ul li { margin-right: 0px; }
@@ -116,20 +116,20 @@ Design and Developed by: potenzaglobalsolutions.com
  .mega-menu .menu-links > li > a { padding: 0 10px; }
  #header.header-dark.topbar-dark ul.submit-button  li a.button { padding: 4px 8px; }
 
-} 
+}
 @media only screen and (min-width:991px) and (max-width:1200px) {
   .container { width: 94%; }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 999px) {
- .container{ max-width:96%; } 
+ .container{ max-width:96%; }
 }
 
 
 @media( max-width:992px) {
-.page-section-ptb { padding: 60px 0; }	
-.page-section-pt { padding-top: 60px ; }	
-.page-section-pb { padding-bottom: 60px; }	
+.page-section-ptb { padding: 60px 0; }
+.page-section-pt { padding-top: 60px ; }
+.page-section-pb { padding-bottom: 60px; }
 /* home 1 */
 #header .topbar-left.text-left, #header .topbar-right.text-right { text-align: center; }
 .mega-menu .menu-logo > li > a { padding: 0px;  }
@@ -144,7 +144,7 @@ Design and Developed by: potenzaglobalsolutions.com
 .mega-menu .menu-links > li:last-child { border-bottom: 0px; }
 .search-top.search-top-open .search-box { top: 52px !important;  }
 #header.defualt { position: relative; background: #323232; }
-#header.light .mega-menu .menu-mobile-collapse-trigger:before,  #header.light .mega-menu .menu-mobile-collapse-trigger:after,  #header.light .mega-menu .menu-mobile-collapse-trigger span { background: #db2d2e; }
+#header.light .mega-menu .menu-mobile-collapse-trigger:before,  #header.light .mega-menu .menu-mobile-collapse-trigger:after,  #header.light .mega-menu .menu-mobile-collapse-trigger span { background: #1a74d2; }
 .welcome-block p { padding: 0px; }
 .feature-box { margin-bottom: 30px; }
 .welcome-block .halp-call { margin-top: 30px; }
@@ -159,7 +159,7 @@ Design and Developed by: potenzaglobalsolutions.com
 .footer-2 .usefull-link { margin-bottom: 30px; }
 .footer-2 .social { margin-bottom: 30px; }
 .footer-2 .footer-box { margin-bottom: 30px; }
-.copyright .text-left, .copyright .text-right { text-align: center; }  
+.copyright .text-left, .copyright .text-right { text-align: center; }
 /*home-2*/
 .content-box { margin-bottom: 30px; }
 .counter.counter-style-1.counter-light ul { display: inline-block; width: 100%; background: #ffffff; }
@@ -167,7 +167,7 @@ Design and Developed by: potenzaglobalsolutions.com
 .why-choose .feature-box { margin-bottom: 30px; }
 .why-choose.page-section-pt { padding-bottom: 50px; }
 /*home-3*/
-.topbar-dark .mega-menu .menu-mobile-collapse-trigger:before, .topbar-dark .mega-menu .menu-mobile-collapse-trigger:after, .topbar-dark .mega-menu .menu-mobile-collapse-trigger span { background: #db2d2e; }
+.topbar-dark .mega-menu .menu-mobile-collapse-trigger:before, .topbar-dark .mega-menu .menu-mobile-collapse-trigger:after, .topbar-dark .mega-menu .menu-mobile-collapse-trigger span { background: #1a74d2; }
 .mega-menu { min-height: 62px; }
 #header.topbar-dark .mega-menu .menu-logo { padding: 20px 0px; }
 #header.fancy .mega-menu .menu-logo { padding: 20px 0px; }
@@ -183,10 +183,10 @@ Design and Developed by: potenzaglobalsolutions.com
 /*home-4*/
 #header.fancy .menu { position: relative; top: 0px; }
 #header.fancy .topbar { padding: 10px 0px; }
-#header.fancy .mega-menu .menu-mobile-collapse-trigger:before,  #header.fancy .mega-menu .menu-mobile-collapse-trigger:after,  #header.fancy .mega-menu .menu-mobile-collapse-trigger span { background: #db2d2e; }
+#header.fancy .mega-menu .menu-mobile-collapse-trigger:before,  #header.fancy .mega-menu .menu-mobile-collapse-trigger:after,  #header.fancy .mega-menu .menu-mobile-collapse-trigger span { background: #1a74d2; }
 #header.fancy .mega-menu > section.menu-list-items { padding: 0px; }
 .quick-links .link a:hover h6 { padding-top: 0px; }
-.custom-block-3 img { margin-top: 30px; } 
+.custom-block-3 img { margin-top: 30px; }
 .quick-links { margin-bottom: 50px; min-height: auto; }
 .custom-block-3 img { width: 100%; }
 /*home-5*/
@@ -207,8 +207,8 @@ Design and Developed by: potenzaglobalsolutions.com
 .contact-2 .gray-form.row { margin-bottom: 30px; padding-right: 0px; }
 .coming-soon-search .row.gray-form { padding: 0px 15px; }
 .masonry .masonry-item { margin-bottom: 20px; }
-.masonry.columns-3 .masonry-item { width:50%; } 
-.masonry.columns-4 .masonry-item { width:50%; } 
+.masonry.columns-3 .masonry-item { width:50%; }
+.masonry.columns-4 .masonry-item { width:50%; }
 .latest-blog.border.masonry-main .masonry.columns-2 .masonry-item { width: 100%; }
 .sorting-options-main .price-slide, .sorting-options-main .price-slide-2 { margin-bottom: 30px; }
 .sorting-options-main .text-right { text-align: left; margin-top: 10px; }
@@ -287,7 +287,7 @@ Design and Developed by: potenzaglobalsolutions.com
 **************************************/
  /*landing-page*/
  .overview.bg-16 { background: #ffffff; }
- .awards-section .row-eq-height { display: block; } 
+ .awards-section .row-eq-height { display: block; }
  .design-tab-bg-01, .design-tab-bg-02, .design-tab-bg-03, .design-tab-bg-04, .design-tab-bg-05, .design-tab-bg-06 { display: none; }
 .design-content { padding:20px 15px;  }
 .design-section .tabcontent .tab-02-content { margin-bottom: 20px; }
@@ -481,7 +481,7 @@ h2 { font-size: 32px; }
 
 }
 
-@media( max-width:479px) { 
+@media( max-width:479px) {
 /*home-2*/
 .custom-block-1 { padding: 40px; }
 .counter.counter-style-1.counter-light ul li { float: none; display: inline-block; width: 100%; }
@@ -502,7 +502,7 @@ h2 { font-size: 32px; }
 .play-video .video-info { margin-top: -70px; }
 .play-video .play-video-bg { padding:80px 0 100px; }
 .search .search-block { padding: 25px 20px 25px; }
-.car-details .details-nav ul li { display: block; } 
+.car-details .details-nav ul li { display: block; }
 .car-details .modal-content { padding: 0px; }
 .car-details h4.modal-title { display: block; }
 .car-details .form-group .radio { display: block; }
@@ -539,7 +539,7 @@ h2 { font-size: 32px; }
 #header.header-dark.topbar-dark ul.submit-button li a.button { display: none; }
 #header.header-dark.topbar-dark ul.submit-button { right: 20px; }
 
-}   
+}
 @media print {
   #header, .footer, .inner-intro, .feature-car, .details-social, .details-form, .details-form, .car-top { display: none; }
   #tabs .tabcontent { display: block !important; }
