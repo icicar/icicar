@@ -23,10 +23,6 @@ class CarListingComponent extends Component
         $this->selectedModelo=$request->session()->get('selectedModelo');
         $this->selectedPrecioMin=$request->session()->get('selectedPrecioMin');
         $this->selectedPrecioMax=$request->session()->get('selectedPrecioMax');
-<<<<<<< HEAD
-        dd($request);
-=======
->>>>>>> 8f6edd85e505f633787d1890ee651604dc177563
     }
 
     public function render()
