@@ -1,9 +1,12 @@
 <section class="search white-bg">
+<<<<<<< HEAD
 
     {{-- {{dd(($marcas['marcas'][0]['marca']))}} --}}
     {{-- {{Log::info('marca seleccionada: ' . $selectedMarca)}}--}}
     {{-- {{Log::info('modelo seleccionado: ' . $selectedModelo)}}--}}
 
+=======
+>>>>>>> 8f6edd85e505f633787d1890ee651604dc177563
     <div class="container">
         <div class="search-block">
             <div class="row">
@@ -14,8 +17,6 @@
                             <span>Marca</span>
                             <div class="selected-box">
                                 <select name="idmarca" class="selectpicker" wire:change="selectedMarca($event.target.value)">
-                                {{-- <select wire:model="selectedMarca" name="selectedMarca" class="selectpicker"> --}}
-                                    <option value="">Marca </option>
                                     @foreach ($marcas[1]->marcas as $marca )
                                         <option value="{{$marca->idmarca}}">{{$marca->marca}} </option>
                                     @endforeach
