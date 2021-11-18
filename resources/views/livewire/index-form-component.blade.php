@@ -1,12 +1,9 @@
 <section class="search white-bg">
-<<<<<<< HEAD
+
 
     {{-- {{dd(($marcas['marcas'][0]['marca']))}} --}}
     {{-- {{Log::info('marca seleccionada: ' . $selectedMarca)}}--}}
     {{-- {{Log::info('modelo seleccionado: ' . $selectedModelo)}}--}}
-
-=======
->>>>>>> 8f6edd85e505f633787d1890ee651604dc177563
     <div class="container">
         <div class="search-block">
             <div class="row">
