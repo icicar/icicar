@@ -14,6 +14,7 @@
                             <span>Marca</span>
                             <div class="selected-box">
                                 <select name="idmarca" class="selectpicker" wire:change="selectedMarca($event.target.value)">
+                                    <option value="">Marca </option>
                                     @foreach ($marcas[1]->marcas as $marca )
                                         <option value="{{$marca->idmarca}}">{{$marca->marca}} </option>
                                     @endforeach

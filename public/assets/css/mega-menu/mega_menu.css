@@ -475,7 +475,7 @@
 }
 .home-2 .mega-menu .menu-mobile-collapse-trigger:before,
 .home-2 .mega-menu .menu-mobile-collapse-trigger:after,
-.home-2 .mega-menu .menu-mobile-collapse-trigger span { background: #323232; }
+.home-2 .mega-menu .menu-mobile-collapse-trigger span { background: #666666; }
 .mega-menu .menu-mobile-collapse-trigger:after {
   top: 27px;
 }
@@ -516,7 +516,7 @@
   max-width: 200px;
 }
 .mega-menu .drop-down-multilevel * {
-  color: #323232;
+  color: #666666;
 }
 @media screen and (min-width: 993px) {
   .mega-menu .drop-down-multilevel {
@@ -590,7 +590,7 @@
     color: #ffffff;
   }
 }
-.mega-menu .menu-links > li.active .drop-down-multilevel a { color: #323232; }
+.mega-menu .menu-links > li.active .drop-down-multilevel a { color: #666666; }
 .mega-menu .menu-links > li.active .drop-down-multilevel a:hover { color: #1a74d2; }
 .mega-menu .drop-down-multilevel a {
   margin: 0;
@@ -600,7 +600,7 @@
   display: inline-block;
   float: left;
   width: 100%;
-  color: #323232;
+  color: #666666;
   -webkit-transition: color 200ms ease;
           transition: color 200ms ease;
   /*min-height: 48px;*/
@@ -673,7 +673,7 @@
 }
 .mega-menu .drop-down *,
 .mega-menu .drop-down-tab-bar * {
-  color: #323232;
+  color: #666666;
 }
 
 
@@ -692,7 +692,7 @@
  .mega-menu .rev-slider { background: #fff; padding: 7px 12px;  }
  .mega-menu .rev-slider p { display: inline-block; padding: 0px 10px; margin-bottom: 0px !important; line-height: 0px !important; }
  .mega-menu .rev-slider a { display: inline-block; font-size: 13px !important; color: #01a9da; width: inherit !important; padding: 5px 0px; }
- .mega-menu .rev-slider a:hover { color: #323232 !important; }
+ .mega-menu .rev-slider a:hover { color: #666666 !important; }
  }
 
 @media screen and (min-width: 993px) {
@@ -876,7 +876,7 @@
   padding: 4px 6px;
   background: #bfbfbf;
   font-size: 0.75em;
-  color: #323232;
+  color: #666666;
 }
 
 .mega-menu .drop-down .space-0,
@@ -1407,7 +1407,7 @@
     right: 0;
     max-width: 100%;
     padding: 0px 10px;
-    background: #323232;
+    background: #666666;
   }
   .mega-menu.desktopTopFixed .menu-list-items .drop-down.grid-col-12,
   .mega-menu.desktopTopFixed .menu-list-items .drop-down-tab-bar.grid-col-12 {

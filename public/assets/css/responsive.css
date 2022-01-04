@@ -139,11 +139,11 @@ Design and Developed by: potenzaglobalsolutions.com
 .mega-menu .menu-links { border:1px solid #e3e3e3; }
 .mega-menu .menu-links > li { line-height: 44px; }
 .mega-menu .mobileTriggerButton { z-index: 1; }
-.search-top .search-btn { color: #323232; }
+.search-top .search-btn { color: #666666; }
 .search-top { padding: 19px 20px; }
 .mega-menu .menu-links > li:last-child { border-bottom: 0px; }
 .search-top.search-top-open .search-box { top: 52px !important;  }
-#header.defualt { position: relative; background: #323232; }
+#header.defualt { position: relative; background: #666666; }
 #header.light .mega-menu .menu-mobile-collapse-trigger:before,  #header.light .mega-menu .menu-mobile-collapse-trigger:after,  #header.light .mega-menu .menu-mobile-collapse-trigger span { background: #1a74d2; }
 .welcome-block p { padding: 0px; }
 .feature-box { margin-bottom: 30px; }
@@ -315,7 +315,7 @@ Design and Developed by: potenzaglobalsolutions.com
 #header.header-dark.topbar-dark ul.submit-button { padding: 8px 0; }
 #header.header-dark.topbar-dark ul.submit-button li a.button { padding: 0px 9px; font-size: 13px; }
 #header.header-dark.topbar-dark .mega-menu .menu-links > li { line-height: 44px; }
-#header.header-dark.topbar-dark .mega-menu .menu-links > li > a { color: #323232; }
+#header.header-dark.topbar-dark .mega-menu .menu-links > li > a { color: #666666; }
 .vehicle-tab .tab-hiiden, .search-banner .tab-hiiden { display: none; }
 
 .search-top { display: block !important; float: none; padding: 19px 0px; margin-left: 0; }
