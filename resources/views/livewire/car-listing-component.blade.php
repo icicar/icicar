@@ -474,10 +474,11 @@
                     </div>
                 </div>
 
+                @foreach($vehiculos[1]->vehiculos as $vehiculo)
+                <div class="car-grid">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12">
 
-                <div class="row">
-                    @foreach ($vehiculos[1]->vehiculos as $vehiculo)
-                        <div class="col-lg-4">
                             <div class="car-item gray-bg text-center">
                                 <div class="car-image">
                                     @if (isset($vehiculo->fotos))
