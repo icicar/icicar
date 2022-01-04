@@ -115,9 +115,9 @@
                     <!-- menu links -->
                     <ul class="menu-links ">
                         <!-- active class -->
-                        <li class="active"><a href="{!! url('/')!!}">Inicio</a></li>
+                        <li><a href="{!! url('/')!!}">Inicio</a></li>
                         <li><a href="{!! url('listado-vehiculos') !!}">Vehículos</a></li>
-                        <li><a href="{!! url('quienes-somos')!!}">Quiénes somos</a></li>
+                        <li  class="{{ request()->is('pages/quines-somos*') ? 'active' : '' }}" ><a href="{!! url('quienes-somos')!!}">Quiénes somos</a></li>
                         <li><a href="{!! url('contacto')!!}" data-hover="Contacto">Contacto</a></li>
                         @auth
                             <li class="nav-item dropdown">
