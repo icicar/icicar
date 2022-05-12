@@ -660,7 +660,7 @@ select { border: 1px solid #232323; color: #777; cursor: pointer; display: block
 .feature-car.new-arrival .car-item { margin-bottom: 30px; }
 .car-item { position: relative; overflow: hidden; }
 .car-item .car-content { background: #ffffff; padding: 20px; }
-.car-item .car-content a { font-size: 16px; font-weight: 600; color: #1a74d2; margin-bottom: 10px; display: block; }
+.car-item .car-content a { font-size: 14px; font-weight: 600; color: #1a74d2; margin-bottom: 10px; display: block; }
 .car-item .car-content a:hover { color: #363636; }
 .car-item .price span { color: #E48449; font-weight: 700; font-size: 16px; }
 .car-item .price span.old-price { color: #E48449; text-decoration: line-through; padding-right: 5px; font-size: 13px; font-weight: 400; }
@@ -1452,7 +1452,7 @@ form.gray-form .form-notice p { margin-bottom: 10px; }
 .details-nav ul li a:hover { border-color: #1a74d2; background: #1a74d2; color: #ffffff; }
 .car-details-sidebar .details-weight { margin-bottom: 40px; }
 .car-details-sidebar .details-phone.details-weight .feature-box-3 .content h4 { margin-top: 10px; margin-bottom: 5px; }
-.details-location iframe { border: 0px; width: 100%; height: 250px; }
+.details-location iframe { border: 0px; width: 100%; height: 450px; }
 /*details-nav working form*/
 .modal-lg { max-width: 900px; }
 .details-nav h6 { margin: 40px 0 20px; }

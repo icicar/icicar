@@ -164,7 +164,8 @@ var POTENZA = {};
 /*************************
       Slider range
 *************************/
-  POTENZA.priceslider = function () {
+/*
+POTENZA.priceslider = function () {
    if($(".price-slide,.price-slide-2").exists()) {
     var precios = $('#amount').val();
     var indice = precios.indexOf("-");
@@ -173,20 +174,38 @@ var POTENZA = {};
     var precioMax = parseInt(precios.substring(indice+1, precios.length-2).split('.').join(''));
         $("#slider-range,#slider-range-2").slider({
             range: true,
-            min: precioMin,
-            max: precioMax,
+            min: 0,
+            max: 60000,
             values: [precioMin, precioMax],
             slide: function(event, ui) {
                 var min = ui.values[0],
                     max = ui.values[1];
                   $('#' + this.id).prev().val(min + " € - " + max + " €");
-                  $("#precioMin").val(min);
-                  $("#precioMax").val(max);
             }
         });
 
     }
   }
+  */
+
+  POTENZA.priceslider = function () {
+    if($(".price-slide,.price-slide-2").exists()) {
+        var precios = $('#amount').val().replace(/ /g, "");
+        var arrPrecios = precios.split("-");
+        console.log(arrPrecios);
+         $("#slider-range,#slider-range-2").slider({
+             range: true,
+             min: 0,
+             max: 100000,
+             values: [arrPrecios[0], arrPrecios[1]],
+             slide: function(event, ui) {
+                 var min = ui.values[0],
+                     max = ui.values[1];
+                     $('#' + this.id).prev().val(min + " € - " + max + " €");
+             }
+         });
+     }
+   }
 
 /*************************
          Countdown

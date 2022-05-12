@@ -29,6 +29,10 @@
         <!-- owl-carousel -->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owl-carousel/owl.carousel.css') }}" />
 
+        <!-- slick css -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick/slick.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick/slick-theme.css') }}" />
+
         <!-- jquery-ui -->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery-ui.css') }}" />
 
@@ -115,10 +119,12 @@
                     <!-- menu links -->
                     <ul class="menu-links ">
                         <!-- active class -->
-                        <li><a href="{!! url('/')!!}">Inicio</a></li>
-                        <li><a href="{!! url('listado-vehiculos') !!}">Vehículos</a></li>
-                        <li  class="{{ request()->is('pages/quines-somos*') ? 'active' : '' }}" ><a href="{!! url('quienes-somos')!!}">Quiénes somos</a></li>
-                        <li><a href="{!! url('contacto')!!}" data-hover="Contacto">Contacto</a></li>
+                        <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{!! url('/')!!}">Inicio</a></li>
+                        <li class="{{ request()->is('listado-vehiculos*') ? 'active' : '' }}"><a href="{!! url('listado-vehiculos') !!}">Vehículos</a></li>
+
+                        <li class="{{ request()->is('quienes-somos*') ? 'active' : '' }}" ><a href="{!! url('quienes-somos')!!}">Quiénes somos</a></li>
+                        <li class="{{ request()->is('contacto*') ? 'active' : '' }}"><a href="{!! url('contacto')!!}" data-hover="Contacto">Contacto</a></li>
+                        {{--
                         @auth
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -143,6 +149,7 @@
                                 <li><a href="{{ route('register') }}" class="underline">Register</a></li>
                             @endif
                         @endauth
+                        --}}
                     </ul>
                    </div>
                   </div>
@@ -196,9 +203,9 @@
                       <div class="row">
                         <div class="col-md-4">
                             <ul>
-                                <li> <a href="vehiculos"> <i class="fas fa-angle-right"></i> Vehículos </a></li>
-                                <li> <a href="quienes-somos"> <i class="fas fa-angle-right"></i> Quiénes somos</a></li>
-                                <li> <a href="contacto"> <i class="fas fa-angle-right"></i> Contacto</a></li>
+                                <li> <a href="{!! url('listado-vehiculos') !!}"> <i class="fas fa-angle-right"></i> Vehículos </a></li>
+                                <li> <a href="{!! url('quienes-somos') !!}"> <i class="fas fa-angle-right"></i> Quiénes somos</a></li>
+                                <li> <a href="{!! url('contacto') !!}"> <i class="fas fa-angle-right"></i> Contacto</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4">
@@ -222,9 +229,9 @@
                 </div>
                 <div class="col-lg-6 col-md-12">
                   <ul class="list-inline text-lg-right text-center">
-                    <li><a href="politica-privacidad">Política de privacidad </a> | </li>
-                    <li><a href="aviso-legal">Aviso legal </a> |</li>
-                    <li><a href="politica-cookies">Política de cookies </a></li>
+                    <li><a href="{!! url('politica-privacidad') !!}">Política de privacidad </a> | </li>
+                    <li><a href="{!! url('aviso-legal') !!}">Aviso legal </a> |</li>
+                    <li><a href="{!! url('politica-cookies') !!}">Política de cookies </a></li>
                   </ul>
                 </div>
                </div>
@@ -252,6 +259,9 @@
 
             <!-- owl-carousel -->
             <script type="text/javascript" src="{{ asset('assets/js/owl-carousel/owl.carousel.min.js') }}"></script>
+
+            <!-- slick -->
+            <script type="text/javascript" src="{{ asset('assets/js/slick/slick.min.js') }}"></script>
 
             <!-- jquery-ui -->
             <script type="text/javascript" src="{{ asset('assets/js/jquery-ui.js') }}"></script>

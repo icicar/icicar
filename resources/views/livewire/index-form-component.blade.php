@@ -8,7 +8,8 @@
         <div class="search-block">
             <div class="row">
                 <div class="col-md-12">
-                    <form wire:submit.prevent="getResultados" method="GET">
+                    <form method="POST" action="{{ route('listado_vehiculos') }}">
+                    @csrf
                     <div class="row">
                         <div class="col-md-4">
                             <span>Marca</span>
@@ -43,11 +44,11 @@
                                 <div class="col-md-8">
                                     <div class="price-slide">
                                         <div class="price">
-                                            <label for="amount">Rango de precio</label>
-                                            <input type="text" name="amount" id="amount" class="amount" value="{{number_format(round($rangoPrecios['1']->preciomin),0,'','.')}} € - {{number_format(round($rangoPrecios['1']->preciomax),0,'','.')}} €" wire:change="selectedAmount($event.target.value)" />
+                                            <input type="text" name="amount" id="amount" class="amount"
+                                                value="{{-- {{number_format(round($rangoPrecios['1']->preciomin),0,'','.')}} € - {{number_format(round($rangoPrecios['1']->preciomax),0,'','.')}} € --}}7500 - 38500" />
                                             <div id="slider-range"></div>
-                                            <input type="hidden" name="precioMin"  id="precioMin" wire:model="selectedPrecioMin">
-                                            <input type="hidden" name="precioMax"  id="precioMax" wire:model="selectedPrecioMax">
+                                            {{-- <input type="hidden" name="precioMin"  id="precioMin" value="{{$rangoPrecios['1']->preciomin}}" wire:change="selectedPrecioMin($event.target.value)">
+                                            <input type="hidden" name="precioMax"  id="precioMax" value="{{$rangoPrecios['1']->preciomax}}" wire:change="selectedPrecioMax($event.target.value)"> --}}
                                         </div>
                                     </div>
                                 </div>

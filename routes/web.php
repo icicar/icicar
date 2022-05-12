@@ -26,15 +26,22 @@ Route::get('/', [VehiculosController::class, 'index']);
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(['auth', 'verified']);
+Route::any('listado-vehiculos', [VehiculosController::class,'getListadoVehiculos'])->name('listado_vehiculos');
+Route::get('detalles-vehiculo/{idvehiculo}', [VehiculosController::class,'getVehiculo'])->name('detalle_vehiculo');
+Route::post('solicita-info/{idvehiculo}', [VehiculosController::class,'solicitaInfo'])->name('solicita_info');
+Route::post('solicita-prueba/{idvehiculo}', [VehiculosController::class,'solicitaPrueba'])->name('solicita_prueba');
+Route::post('hacer-oferta/{idvehiculo}', [VehiculosController::class,'hacerOferta'])->name('hacer_oferta');
+Route::post('enviar-amigo/{idvehiculo}', [VehiculosController::class,'enviarAmigo'])->name('enviar_amigo');
 
 Route::view('/contacto', 'contact.contact');
-Route::view('/detalles-vehiculo', 'car-details.car-details');
-Route::view('/listado-vehiculos', 'car-listing.car-listing')->name('listado_vehiculos');
+//Route::view('/detalles-vehiculo', 'car-details.car-details');
+//Route::view('/listado-vehiculos', 'car-listing.car-listing')->name('listado_vehiculos');
 Route::view('/politica-privacidad', 'policies.privacy-policy');
 Route::view('/politica-cookies', 'policies.cookies-policy');
 Route::view('/aviso-legal', 'policies.legal-advidsory');
 Route::view('/quienes-somos', 'about-us.about-us');
 
+/*
 Route::get('get-marcas-vehiculos', [VehiculosController::class,'getMarcasVehiculos']);
 Route::get('get-modelos-vehiculos/{idmarca}', [VehiculosController::class,'getModelosVehiculos']);
 Route::get('get-carburantes-vehiculos', [VehiculosController::class,'getCarburantesVehiculos']);
@@ -45,3 +52,8 @@ Route::get('get-paises', [VehiculosController::class,'getPaises']);
 Route::get('get-provincias', [VehiculosController::class,'getProvincias']);
 Route::get('get-municipios', [VehiculosController::class,'getMunicipios']);
 Route::get('get-vehiculos', [VehiculosController::class,'getVehiculos']);
+*/
+
+
+
+

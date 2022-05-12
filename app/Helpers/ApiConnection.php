@@ -57,6 +57,7 @@
 
             ));
             $response = curl_exec($curl);
+
             $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             if (curl_errno($curl)) {
                 print curl_error($curl);
